@@ -42,12 +42,12 @@
 									<div class="col-sm-6">
 										<div class="form-group">
 											<label style="display:block">C&eacute;dula / Rif *</label>
-											<select class="form-control" style="display:inline-block; width:auto" name="predocumento" required="">
+											<select class="form-control" style="display:inline-block; width:auto" name="predocumento" required="" id="predocumento">
 												<option value="V">V</option>
 												<option value="J">J</option>
 												<option value="E">E</option>
 											</select>
-											<input class="form-control" style="display:inline-block; width:auto" type="text" name="documento" maxlength="9" placeholder="C&eacute;dula / Rif" required="" onkeypress="return isNumber(event)">
+											<input class="form-control" style="display:inline-block; width:auto" type="text" name="documento" maxlength="8" placeholder="C&eacute;dula / Rif" required="" onkeypress="return isNumber(event)" id="documento">
 										</div>
 										<div class="form-group">
 											<label>Nombre o Raz&oacute;n social *</label>
@@ -162,8 +162,17 @@
 	<script type="text/javascript">
 		$("table#table_ext tbody tr").each(function(){
 			_select = $(this).find("select[name=id_ext_categoria]")
-			cargar_extintores_by_categoria(_select)
+			cargar_extintores_by_categoria(_select);
 		})
+		$("select#predocumento").change(function(){
+				valor = $(this).val();
+				if(valor == "V" || valor == "E"){
+					$("input#documento").attr("maxlength", "8");
+					$("input#documento").val( $("input#documento").val().substring(0, 8) );
+				}else if(valor == "J" ){
+					$("input#documento").attr("maxlength", "9");
+				}
+			});
 	</script>
 </body>
 </html>

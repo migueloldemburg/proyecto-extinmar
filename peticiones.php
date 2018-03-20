@@ -144,6 +144,13 @@ switch ($_POST['accion']) {
 		$datos['ejecutar'] = '';
 		$datos['refrescar'] = true;
 
+		if($_POST['de']=='usuario' AND $_SESSION['id_']==$_POST['id']){
+			$datos['exitoso'] = false;
+			$datos['error'] = "No puede eliminar el mismo usuario";
+			echo json_encode($datos);
+			exit();
+		}
+
 		if($obj->cambiar_estado($_POST['id'], $_POST['de'], $_POST['estado'])){
 			$datos['exitoso'] = true;
 		}else{

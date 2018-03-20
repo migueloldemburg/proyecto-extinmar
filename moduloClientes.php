@@ -80,7 +80,7 @@
 					</div>
 				</form>
 				<br>
-				<table class="table table-condensed" style="font-size:13px">
+				<table class="table table-condensed" style="font-size:13px; background-color:white">
 					<thead>
 						<th>Cliente</th>
 						<th>Documento</th>

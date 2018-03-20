@@ -13,4 +13,4 @@
 <link rel="stylesheet" type="text/css" href= "<?php echo $ruta ?>libs/jquery-ui-1.12.1/jquery-ui.min.css">
 <link rel="stylesheet" type="text/css" href= "<?php echo $ruta ?>libs/alertifyjs/alertify.min.css">
 <link rel="stylesheet" type="text/css" href= "<?php echo $ruta ?>libs/alertifyjs/bootstrap.min.css">
-<link rel="stylesheet" href= "<?php echo $ruta ?>css/styles.css?1.0.1">
+<link rel="stylesheet" href= "<?php echo $ruta ?>css/styles.css?1.0.3">

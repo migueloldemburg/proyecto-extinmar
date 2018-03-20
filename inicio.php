@@ -4,7 +4,7 @@
 <head>
 	<?php require("libs/cssLibs.php") ?>
 </head>
-<body>
+<body style="background:none !important">
 	<?php require("css/header.php") ?>
 
 	<div class="container">

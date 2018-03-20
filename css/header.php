@@ -117,12 +117,12 @@
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-list"></span> Ver <span class="caret"></span>
 					</a>
 					<ul class="dropdown-menu">
-						<li><a href="verExtintorEnAlmacen.php"><span class="glyphicon glyphicon-indent-left"></span> Extintores en Almac&eacute;n por Fecha</a></li>
-						<li><a href="extintoresAlmacenTipo.php"><span class="glyphicon glyphicon-indent-left"></span> Extintores en Almac&eacute;n  Categoria</a></li>
-						<li><a href="buscarNotasEstado.php"><span class="glyphicon glyphicon-indent-left"></span> Nota por Estado</a></li>
-						<li><a href="cantidadQuimicoCategoria.php"><span class="glyphicon glyphicon-indent-left"></span> Cantidad de Qu&iacute;mico por Categoria </a></li>
-						<li><a href="estadisticaExtintores.php"><span class="glyphicon glyphicon-indent-left"></span> Estad&iacute;sticas de extintores M/T/A </a></li>
-						<li><a href="quimicosBajosAlamacen.php"><span class="glyphicon glyphicon-indent-left"></span> Qu&iacute;micos por debajo de la cantidad m&iacute;nima </a></li>
+						<li><a href="verExtintorEnAlmacen.php">Extintores en Almac&eacute;n por Fecha</a></li>
+						<li><a href="extintoresAlmacenTipo.php">Extintores en Almac&eacute;n  Categoria</a></li>
+						<li><a href="buscarNotasEstado.php">Nota por Estado</a></li>
+						<li><a href="cantidadQuimicoCategoria.php">Cantidad de Qu&iacute;mico por Categoria </a></li>
+						<li><a href="estadisticaExtintores.php">Estad&iacute;sticas de extintores M/T/A </a></li>
+						<li><a href="quimicosBajosAlamacen.php">Qu&iacute;micos por debajo de la cantidad m&iacute;nima </a></li>
 					</ul>
 				</li>
 

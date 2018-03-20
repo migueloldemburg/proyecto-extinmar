@@ -1,7 +1,7 @@
 <?php // content="text/plain; charset=utf-8"
 
-require_once ('libs/jpgraph-4.1.0/src/jpgraph.php');
-require_once ('libs/jpgraph-4.1.0/src/jpgraph_bar.php');
+require_once ('libs/jpgraph-4.2.0/src/jpgraph.php');
+require_once ('libs/jpgraph-4.2.0/src/jpgraph_bar.php');
 require_once ('class/MiClase.php');
 //Cada arreglo es cada tipo de extintor, y cada valor es lo que representa por mes
 
@@ -34,7 +34,7 @@ $graph->SetScale("textlin");
 $theme_class=new UniversalTheme;
 $graph->SetTheme($theme_class);
 
-$graph->yaxis->SetTickPositions(array(0,10,20,30,60,90,120,150, 200), array(5,15,25,45,75,105,135));
+$graph->yaxis->SetTickPositions(array(0,2,4,10,20,30,60,90,120,150, 200), array(1,3,5,15,25,45,75,105,135));
 $graph->SetBox(false);
 
 $graph->ygrid->SetFill(false);

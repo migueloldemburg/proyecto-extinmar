@@ -1,5 +1,9 @@
 body{
 	padding-top: 60px;
+	background-image: url("../images/background1.jpg") ;
+	background-repeat: no-repeat, repeat;
+	background-position: bottom top; 
+
 }
 
 input, textarea{
@@ -134,4 +138,9 @@ input, textarea{
 
 .ajs-content{
 	text-align: center !important;
+}
+
+ul.navbar-nav li a:hover{
+	background-color: #635f5f !important;
+	color: white !important;
 }

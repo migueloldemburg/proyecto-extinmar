@@ -42,16 +42,12 @@ if(isset($_POST['entrar'])){
 <head>
 	<?php require("libs/cssLibs.php") ?>
 </head>
-<body>
+<body style="padding-top:0px; background:none !important">
 
 	<div class="container-fluid">
-		<div class="row">
-			<div class="col-xs-6 login-side left">
-				<p class="title-01">EXTINMAR C.A.</p>
-				<img src="images/bg3.jpg">
-			</div>
-			<div class="col-xs-offset-6 col-xs-6 login-side right">
-				<h2>Inicio de sesi&oacute;n</h2>
+		<div class="row" style="background-color: #080825">
+			<div class="col-xs-12 col-md-offset-4 col-md-4" style="padding:40px 15px">
+				<h2 style="color: #fff" class="text-center">Inicio de sesi&oacute;n</h2>
 				<form action="" method="post">
 					<div class="form-group">
 						<input type="text" name="usuario" class="form-control" required="" placeholder="Nombre de usuario" autofocus="" value="<?php echo $usuario ?>">
@@ -61,14 +57,21 @@ if(isset($_POST['entrar'])){
 						<a href="recuperarClave.php" class="pull-right">Olvid&eacute; contrase&ntilde;a</a>
 					</div>
 					<br>
-					<br>
 			        <?php
 			        	if($tieneError){
 			        		echo $alert;
 			        	}
 			        ?>
-					<button class="btn btn-block btn-primary" type="submit" name="entrar">Entrar al sistema</button>
+			        <div class="form-group">
+						<button class="btn btn-block btn-primary" type="submit" name="entrar">Entrar al sistema</button>
+					</div>
 				</form>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 col-md-offset-4 col-md-4">
+				<h3 class="text-center">EXTINMAR C.A.</h3>
+				<img style="width:100%" src="images/bg3.jpg">
 			</div>
 		</div>
 	</div>

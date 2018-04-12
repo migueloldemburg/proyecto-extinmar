@@ -4,7 +4,7 @@
 <head>
 	<?php require("libs/cssLibs.php") ?>
 </head>
-<body class="changeBG">
+<body class="">
 	<?php require("css/header.php") ?>
 
 	<div class="container">

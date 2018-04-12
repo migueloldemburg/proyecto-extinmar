@@ -29,7 +29,7 @@
 					<div class="panel-heading"><?php echo "Cantidad de qu&iacute;micos en alamac&eacute;n por categoria" ?></div>
 					<div class="panel-content">
 						<div clasx="table-responsive">
-							<table class="table table-condensed table-striped" style="font-size:13px">
+							<table class="table table-condensed " style="font-size:13px">
 								<thead>
 									<th>C&oacute;digo</th>
 									<th>Categor&iacute;a</th>

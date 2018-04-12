@@ -259,5 +259,66 @@ class Usuarios{
         }
     }
 
+    function enviarRecordatorio($destinatario){
+        $destinatario = $this->conex->real_escape_string(strip_tags($destinatario,ENT_QUOTES));
+       
+        $select = "SELECT cliente FROM cliente WHERE LOWER(email) = '".$destinatario."' ";
+        $sql_select = $this->conex->query($select);
+        
+        if($sql_select->num_rows > 0){
+            $datos = $sql_select->fetch_assoc();
+
+
+            include('libs/mail/class.phpmailer.php');
+            include('libs/mail/class.smtp.php');
+          
+            $username = $this->username;
+            $password = $this->password;
+            $subject = "Ha recibido un correo de <EXTINMAR CA>";
+            $titulo = "<Recordatorio de mantenimiento de extintores>";
+
+           $observacion = "
+            <div style='width:600; height: 50px; background: #111; padding: 5px 15px; box-sizing:border-box'>
+                <p style='text-align: center;color:#fe0000'>RECORDATORIO DE MANTENIMIENTO DE EXTINTOR</p>
+            </div>
+            <div style='width:600; min-height: 50px; border: #111 solid 2px; padding: 10px 15px; box-sizing:border-box'>
+                <strong>Hola estimado ".$datos['cliente'].", el siguiente correo es para recordarle que su último servicio de extintor fue hace apróximadamente 6 meses. Le invitamos a continuar con el mantenimiento preventivo de sus extintores.</strong><br><br>
+                Siempre a la orden,<br>Equipo de EXTINMAR C.A.
+                <br><br>
+            </div>
+            ";
+            // *********************************************
+
+            $mail = new PHPMailer();
+            $mail->IsSMTP();
+            $mail->CharSet = 'UTF-8';
+            // 0 en produccion
+            $mail->SMTPDebug  = 0;
+            $mail->Host       = 'smtp.gmail.com';
+            $mail->Port       = 587;
+            $mail->SMTPSecure = 'tls';
+            $mail->SMTPAuth   = true;
+            $mail->Username   = $username;
+            $mail->Password   = $password;
+            $mail->SetFrom($username, $titulo);
+            $mail->AddAddress($destinatario, 'Extinmar');
+            $mail->isHtml(true);
+            $mail->Subject = $subject;
+            $mail->MsgHTML($observacion);
+            $mail->AltBody = $observacion;
+
+            if($mail->Send()){
+                $this->msj = 'Hemos enviado el correo de recordatorio a: '.$destinatario;
+                return true;
+            }else{
+               $this->error = 'Parece que nuestro proveedor de correo ha fallado. Intente nuevamente.';
+               return false;
+            }
+        }else{
+            $this->error = 'Este correo no se encuentra en nuestra plataforma';
+            return false;
+        }
+    }
+
 }
 ?>

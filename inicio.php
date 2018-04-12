@@ -11,7 +11,7 @@
 		<div class="row">
 			<div class="col-md-offset-3 col-md-5">
 				<h3 class="text-center">Bienvenidos al Sistema de EXTIMAR C.A.</h3>
-				<img src="images/bg2.jpg" style="width:100%; height: auto">
+				<img src="images/inicio.jpg" style="width:100%; height: auto">
 			</div>
 		</div>
 	</div>

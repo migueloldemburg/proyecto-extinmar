@@ -4,7 +4,7 @@
 <head>
 	<?php require("libs/cssLibs.php") ?>
 </head>
-<body>
+<body class="adjusted">
 	<?php require("css/header.php") ?>
 
 	<!-- Modal -->

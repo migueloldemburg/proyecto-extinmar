@@ -4,7 +4,7 @@
 <head>
 	<?php require("libs/cssLibs.php") ?>
 </head>
-<body>
+<body class="rereadjusted">
 	<?php require("css/header.php") ?>
 
 	<!-- Modal Categorias -->

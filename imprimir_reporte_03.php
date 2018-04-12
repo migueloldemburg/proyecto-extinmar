@@ -29,7 +29,7 @@
 					<div class="panel-heading"><?php echo "Notas de servicio por estado por rango de fecha desde: ".$_POST['from']." hasta: ".$_POST['to'] ?></div>
 					<div class="panel-content">
 						<div clasx="table-responsive">
-							<table class="table table-condensed table-striped" style="font-size:13px">
+							<table class="table table-condensed " style="font-size:13px">
 								<thead>
 									<th>N&uacute;mero</th>
 									<th>Cliente</th>

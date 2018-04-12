@@ -67,7 +67,7 @@
 							</form>
 						</div>
 						<div clasx="table-responsive">
-							<table class="table table-condensed table-striped" style="font-size:13px">
+							<table class="table table-condensed " style="font-size:13px">
 								<thead>
 									<th>Id</th>
 									<th>Tipo</th>

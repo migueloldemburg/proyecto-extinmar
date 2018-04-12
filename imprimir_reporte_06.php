@@ -29,7 +29,7 @@
 					<div class="panel-heading"><?php echo "Servicios realizados a extintor #".$_POST['id_ext'] ?></div>
 					<div class="panel-content">
 						<div clasx="table-responsive">
-							<table class="table table-condensed table-striped" style="font-size:13px">
+							<table class="table table-condensed " style="font-size:13px">
 								<thead>
 									<th>Servicio</th>
 									<th>Estado</th>

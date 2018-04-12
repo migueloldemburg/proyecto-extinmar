@@ -190,6 +190,13 @@ class Usuarios{
             $mail->MsgHTML($observacion);
             $mail->AltBody = $observacion;
 
+            $mail->SMTPOptions = array(
+                'ssl' => array(
+                    'verify_peer' => false,
+                    'verify_peer_name' => false,
+                    'allow_self_signed' => true
+                )
+            );
             if($mail->Send()){
                 $this->msj = 'Hemos enviado sus datos de usuario al correo que nos ha especificado.';
                 return true;
@@ -252,6 +259,13 @@ class Usuarios{
         $mail->MsgHTML($observacion);
         $mail->AltBody = $observacion;
 
+        $mail->SMTPOptions = array(
+            'ssl' => array(
+                'verify_peer' => false,
+                'verify_peer_name' => false,
+                'allow_self_signed' => true
+            )
+        );
         if($mail->Send()){
             return true;
         }else{
@@ -307,6 +321,14 @@ class Usuarios{
             $mail->MsgHTML($observacion);
             $mail->AltBody = $observacion;
 
+            $mail->SMTPOptions = array(
+                'ssl' => array(
+                    'verify_peer' => false,
+                    'verify_peer_name' => false,
+                    'allow_self_signed' => true
+                )
+            );
+            
             if($mail->Send()){
                 $this->msj = 'Hemos enviado el correo de recordatorio a: '.$destinatario;
                 return true;

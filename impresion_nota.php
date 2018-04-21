@@ -107,18 +107,14 @@
 				while($row=$extintores->array->fetch_assoc())
 				{
 				?>
-					<div class="col-sm-4">
+					<div class="col-xs-4" style="font-size: 10px !important">
 						<!-- PANEL EXTINTOR -->
 						<div class="panel panel-default">
-							<div class="panel-heading"><?php echo "Producto: ".$row['categoria']." ".$row['capacidad']."lbs ".$row['servicio_general'] ?>
+							<div class="panel-heading"><?php echo $row['categoria']." ".$row['capacidad']."lbs ".$row['servicio_general'] ?>
 							</div>
-							<div class="panel-content">
+							<div class="panel-content" style="padding-bottom: 0">
 								<div class="container-fluid">
-									<table class="table table-condensed">
-										<thead>
-											<th>Servicio</th>
-											<th class="text-right">Precio (Bs.F)</th>
-										</thead>
+									<table class="table table-condensed" style="font-size: 10px !important">
 										<tbody>
 											<?php
 											$servicios = new Notas();	
@@ -130,8 +126,8 @@
 													$total +=$row2['precio']; 
 											?>
 												<tr>
-													<td><?php echo $row2['nombre'] ?></td>
-													<td class="text-right"><?php echo "Bs.F ".number_format($row2['precio'], 2, ',', '.') ?></td>													
+													<td style="padding:2px"><?php echo ucfirst(strtolower($row2['nombre'])) ?></td>
+													<td style="padding:2px" class="text-right"><?php echo "Bs.F ".number_format($row2['precio'], 2, ',', '.') ?></td>													
 												</tr>
 											<?php
 												}

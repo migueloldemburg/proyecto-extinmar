@@ -1,7 +1,7 @@
 <?php
     session_start();
 ?>
-<form action="restauracion.php" method="get" enctype="multipart/form-data" name="formularioDeRestauracion" id="formularioDeRestauracion" onsubmit="return enviar();">
+<form action="restauracion.php" method="get" enctype="multipart/form-data" name="formularioDeRestauracion" id="formularioDeRestauracion">
     <table width="334" border="0" align="center">
         <tr>
             <td colspan="2"><h4>Indique el or&iacute;gen del archivo de copia</h4></td>

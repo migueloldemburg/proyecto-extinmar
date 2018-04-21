@@ -120,22 +120,22 @@ switch ($_POST['accion']) {
 		$datos = array();
 		$datos['ejecutar'] = '';
 		$datos['refrescar'] = true;
+		$datos['exitoso'] = false;
 
 		if($cliente->obtener_cliente_by_documento($_POST['documento'])){
-			$datos['exitoso'] = true;
-			$datos['id'] = 		intval($cliente->id);
-            $datos['cliente'] = $cliente->cliente;
-	        $datos['predocumento'] = substr($cliente->documento,0 ,1);
-	        $datos['documento'] = filter_var($cliente->documento, FILTER_SANITIZE_NUMBER_INT);
-	        $datos['email'] = $cliente->email;
-	        $datos['telefono1'] = $cliente->telefono1;
-	        $datos['telefono2'] = $cliente->telefono2;
-	        $datos['direccion'] = $cliente->direccion;
-	        $datos['fecha_registro'] = $cliente->fecha_registro;
-		}else{
-			$datos['exitoso'] = false;
+			if($cliente->estado != 2){
+				$datos['exitoso'] = true;
+				$datos['id'] = 		intval($cliente->id);
+	            $datos['cliente'] = $cliente->cliente;
+		        $datos['predocumento'] = substr($cliente->documento,0 ,1);
+		        $datos['documento'] = filter_var($cliente->documento, FILTER_SANITIZE_NUMBER_INT);
+		        $datos['email'] = $cliente->email;
+		        $datos['telefono1'] = $cliente->telefono1;
+		        $datos['telefono2'] = $cliente->telefono2;
+		        $datos['direccion'] = $cliente->direccion;
+		        $datos['fecha_registro'] = $cliente->fecha_registro;
+		    }
 		}
-
 		echo json_encode($datos);
 	break;
 	case 'cambiar_estado':
@@ -671,9 +671,6 @@ switch ($_POST['accion']) {
 				<button class="btn btn-sm btn-danger delete_this_tr"  type="button"><span class='glyphicon glyphicon-remove'></span></button>
 			</td>
 		</tr>
-		<script>
-			cargar_extintores_by_categoria( $("select[name=id_ext_categoria]") )
-		</script>
 		<?php
 	break;
 	case 'guardar_nota_servicio':
@@ -846,9 +843,9 @@ switch ($_POST['accion']) {
 						case '4': echo "<td><span class='label label-danger'>Cancelado</span></td>"; break;
 					}
 					echo "<td>";
-					echo "<button class='btn btn-xs cancelar_nota' id='".$row['id']."'><span class='glyphicon glyphicon-remove'></span></button>";
-					echo " <button class='btn btn-xs' onclick='ver_extintores_nota(".$row['id'].")'><span class='glyphicon glyphicon-eye-open'></span></button>";
-					echo " <button class='btn btn-xs' onclick='imprimir_nota(".$row['id'].")'><span class='glyphicon glyphicon-print'></span></button>";
+					echo "<button class='btn btn-xs cancelar_nota' id='".$row['id']."' data-toggle='tooltip' data-placement='top' title='Eiminar'><span class='glyphicon glyphicon-remove'></span></button>";
+					echo " <button class='btn btn-xs' onclick='ver_extintores_nota(".$row['id'].")' data-toggle='tooltip' data-placement='top' title='Ver'><span class='glyphicon glyphicon-eye-open'></span></button>";
+					echo " <button class='btn btn-xs' onclick='imprimir_nota(".$row['id'].")' data-toggle='tooltip' data-placement='top' title='Imprimir'><span class='glyphicon glyphicon-print'></span></button>";
 					echo "</td>";
 					echo "</tr>";
 				}
@@ -1036,6 +1033,11 @@ switch ($_POST['accion']) {
 				echo "<td>".$notas->cliente."</td>";
 				echo "<td>".$notas->obtener_num_extintores($notas->id)."</td>";
 				echo "<td>".$notas->fecha_registro."</td>";
+				if($row['fecha_entrega'] != null){
+					echo "<td>".date("d-m-Y", strtotime($row['fecha_entrega']))."</td>";
+				}else{
+					echo "<td>-Sin entregar-</td>";
+				}
 				switch ($notas->estado) {
 					case '0': echo "<td><span class='label label-info'>Emitida</span></td>"; break;
 					case '1': echo "<td><span class='label label-primary'>En Taller</span></td>"; break;

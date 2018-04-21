@@ -29,7 +29,7 @@
 						<div clasx="table-responsive">
 							<table class="table table-condensed " style="font-size:13px">
 								<thead>
-									<th>Id</th>
+									<th>C&oacute;digo</th>
 									<th>Tipo</th>
 									<th>Capacidad</th>
 									<th>Servicio</th>

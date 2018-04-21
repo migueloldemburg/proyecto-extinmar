@@ -64,7 +64,7 @@
 						<div class="table-responsive">
 							<table class="table table-condensed" style="font-size:13px">
 								<thead>
-									<th>N#</th>
+									<th>C&oacute;digo</th>
 									<th>Categoria</th>
 									<th>Extintor</th>
 									<th>Servicio</th>

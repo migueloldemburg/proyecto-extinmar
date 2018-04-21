@@ -319,7 +319,7 @@ class Notas{
             <p style='text-align: center;color:#fe0000'>INFORMACION</p>
         </div>
         <div style='width:600; min-height: 50px; border: #111 solid 2px; padding: 10px 15px; box-sizing:border-box'>
-            <strong>Hola estimado ".$cliente_nombre.", nos complace informarle que su orden #".$id_nota." se encuentra lista. Ya puede pasar por nuestras oficinas para recoger sus extintores.</strong><br><br>
+            <strong>Hola estimado ".strtoupper($cliente_nombre).", nos complace informarle que su orden #".$id_nota." se encuentra lista. Ya puede pasar por nuestras oficinas para recoger sus extintores.</strong><br><br>
             <br><br>
             Siempre a la orden,<br>Equipo de EXTINMAR C.A.
             <br><br>

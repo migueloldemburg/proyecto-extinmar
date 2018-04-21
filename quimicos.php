@@ -34,6 +34,7 @@
 							<select class="form-control" name="postCantidad" style="display:inline-block; width:auto">
 								<option value="KG">KG</option>
 								<option value="LBS">LBS</option>
+								<option value="LTS">LTS</option>
 							</select>
 						</div>
 						<div class="form-group">
@@ -98,7 +99,7 @@
 								if($ser_categoria->obtener_servicios('quimico')){
 									while($row=$ser_categoria->array->fetch_assoc()){
 										echo "<tr>";
-										echo "<td>".$row['nombre']."</td>";
+										echo "<td>".$row['nombre']." <span class='label label-default'>Cant. min. 10 ".preg_replace('/[^A-Za]+/', '', $row["cantidad"])."</span></td>";
 										echo "<td>Bs.F ".number_format($row['precio'], 2, ',', '.')."</td>";
 										echo "<td>".$row['cantidad']."</td>";
 										echo "<td>".$row['departamento']." - ".$row['pasillo']."</td>";

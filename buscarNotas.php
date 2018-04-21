@@ -59,7 +59,7 @@
 						<div clasx="table-responsive">
 							<table class="table table-condensed " style="font-size:13px">
 								<thead>
-									<th>N&uacute;mero</th>
+									<th>C&oacute;digo</th>
 									<th>Cliente</th>
 									<th>Num. Extintores</th>
 									<th>Fecha</th>

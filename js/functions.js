@@ -476,7 +476,9 @@ $(function(){
 
 	$('body').on('submit', '#buscar_notas_01', function (event){
 		var parametros = $(this).serialize();
-		var button = $(this).find("button[type=submit]")
+		var button = $(this).find("button[type=submit]");
+
+		$("#ver_extintores_notas").html('<tr><td colspan="6"><em>Seleccionar nota</em></td></tr>');
 		
 		$.ajax({
 			type: "POST",
@@ -636,9 +638,11 @@ function cargar_servicio_por_tipoTaller(tipo){
 		}
 	})
 	if(tipo=='servicio'){
-		$("#confServiciosExtintorEnTaller").find("input[name=cantidad]").attr("readonly", true).val(0)
+		$("#confServiciosExtintorEnTaller").find("input[name=cantidad]").attr("readonly", true).val(0);
+		$("#hideonmove").css("display", "none")
 	}else{
-		$("#confServiciosExtintorEnTaller").find("input[name=cantidad]").attr("readonly", false).val(0).focus()
+		$("#confServiciosExtintorEnTaller").find("input[name=cantidad]").attr("readonly", false).val(0).focus();
+		$("#hideonmove").css("display", "block")
 	}
 }
 
@@ -675,7 +679,8 @@ function agregar_extintor_table(){
 		url: "peticiones.php",
 		data: {accion:'agregar_extintor_table'},
 		success: function(datos){
-			$("table#table_ext tbody").append(datos)
+			$("table#table_ext tbody").append(datos);
+			$("table#table_ext tbody tr:last-child").find("select[name=id_ext_categoria]").trigger("change")
 		}
 	})
 }
@@ -690,7 +695,11 @@ function respaldarr(){
 	              $("#container_respaldo").html("<img src='images/white-loader.gif'/>");
 	            },
 	            success: function(datos){
-	              $("#container_respaldo").html(datos);
+	              $("#container_respaldo").html("");
+	              alertify.alert("Mensaje", "El respaldo se ha ejecutado correctamente.", function(){
+	              	location.reload();
+	              })
+	              
 	            }
 	        });
 		},
@@ -906,14 +915,8 @@ function print_grafica(type){
 }
 
 setInterval(function(){
-	$.ajax({
-	    type: "POST",
-	    url: "peticiones.php",
-	    data:{accion:'whattime'},
-	    success: function(datos){
-	     	$("#time0").text(datos);
-	    }
-	});
+	var datetime = new Date().toLocaleString();
+	$("#time0").text(datetime);
 }, 1000)
 
 function guardarPDF(datos){

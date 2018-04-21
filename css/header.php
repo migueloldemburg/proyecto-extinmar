@@ -14,7 +14,9 @@
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
-
+				<li class="dropdown">
+					<a href="inicio.php"><span class="glyphicon glyphicon-home"></span></a>
+				</li>
 				<li class="dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
 						<span class="glyphicon glyphicon-user"></span>
@@ -23,19 +25,14 @@
 					</a>
 					<ul class="dropdown-menu">
 						<li><a href="salir.php"><span class="glyphicon glyphicon-log-out"></span> Salir</a></li>
-						
+						<li><a href="acercade.php"><span class="glyphicon glyphicon-info-sign"></span> Acerca de</a></li>
 						<?php
 						switch ($_SESSION['nivel_']) {
-							case 'administrador':
-								echo "<li><a href='manual/administrador.pdf'  target='_blank'><span class='glyphicon glyphicon-info-sign'></span> Manual de usuario</a></li>";
-								break;
-							case 'secretaria':
-								echo "<li><a href='manual/secretaria.pdf'  target='_blank'><span class='glyphicon glyphicon-info-sign'></span> Manual de usuario</a></li>";
-								break;
-							case 'recargador':
-								echo "<li><a href='manual/recargador.pdf'  target='_blank'><span class='glyphicon glyphicon-info-sign'></span> Manual de usuario</a></li>";
-								break;
+							case 'administrador': $href = 'manual/administrador.pdf'; break;
+							case 'secretaria': $href = 'manual/secretaria.pdf';	break;
+							case 'recargador': $href = 'manual/recargador.pdf';	break;
 						}
+						echo '<li><a href="'.$href.'"><span class="glyphicon glyphicon-question-sign"></span> Manual de usuario</a></li>';
 						if($_SESSION['nivel_']=='administrador')
 						{
 							echo "<li><a href='respaldar_restaurar.php'><span class='glyphicon glyphicon-import'></span> Respaldar y Restaurar BD <span class='glyphicon glyphicon-export'></span></a></li>";
@@ -87,6 +84,7 @@
 						}
 						if($_SESSION['nivel_']=='secretaria'){
 							echo '<li><a href="moduloClientes.php">Clientes</a></li>';
+							echo '<li><a href="moduloServiciosGenerales.php">Servicios Generales</a></li>';
 						}
 						if($_SESSION['nivel_']=='recargador'){
 
@@ -140,7 +138,7 @@
 
 				<li>
 					<a href="#" style="cursor: default">
-						<?php echo date("d-m-Y") ?> <span id="time0"><?php echo date("h:m:s") ?></span><?php echo " ".ucfirst($_SESSION['nivel_']) ?>
+						<span id="time0"></span><?php echo " ".ucfirst($_SESSION['nivel_']) ?>
 					</a>
 				</li>
 

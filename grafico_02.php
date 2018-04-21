@@ -45,6 +45,14 @@ $graph->xaxis->SetTickLabels(array('Ene-Feb-Mar','Abr-May-Jun','Jul-Ago-Sep','Oc
 $graph->yaxis->HideLine(false);
 $graph->yaxis->HideTicks(false, false);
 
+$graph->xaxis->title->Set("Mes");
+$graph->yaxis->title->Set("Extintor");
+$graph->xaxis->SetPos('min');
+ 
+$graph->title->SetFont(FF_FONT1,FS_BOLD);
+$graph->yaxis->title->SetFont(FF_FONT1,FS_BOLD);
+$graph->xaxis->title->SetFont(FF_FONT1,FS_BOLD);
+
 // Create the bar $b0plot, $b1plot, $bNplot... / CADA TIPO de extintor
 $groupBar = array();
 for($i=0; $i<$contador;$i++){
@@ -86,5 +94,6 @@ for($i=0; $i<$contador;$i++){
 $graph->title->Set("GRAFICAS TRIMESTRALES  AÑO(".date('Y').")");
 
 // Display the graph
+$graph->legend->SetPos(0.5,0.98,'center','bottom');
 $graph->Stroke();
 ?>

@@ -41,7 +41,7 @@ $graph->SetScale("textlin");
 $theme_class=new UniversalTheme;
 $graph->SetTheme($theme_class);
 
-$graph->yaxis->SetTickPositions(array(0,2,4,10,20,30,60,90,120,150, 200), array(1,3,5,15,25,45,75,105,135));
+$graph->yaxis->SetTickPositions(array(0,2,4,10,20,30,60,90,120,150, 180, 210, 240, 270, 300, 330, 360), array(1,3,5,15,25,45,75,105,135,165, 195, 225, 245, 275, 305, 335, 365));
 $graph->SetBox(false);
 
 $graph->ygrid->SetFill(false);
@@ -51,6 +51,14 @@ $graph->xaxis->SetTickLabels(array('Ene','Feb','Mar','Abr', 'May', 'Jun','Jul','
 
 $graph->yaxis->HideLine(false);
 $graph->yaxis->HideTicks(false, false);
+
+$graph->xaxis->title->Set("Mes");
+$graph->yaxis->title->Set("Extintor");
+$graph->xaxis->SetPos('min');
+ 
+$graph->title->SetFont(FF_FONT1,FS_BOLD);
+$graph->yaxis->title->SetFont(FF_FONT1,FS_BOLD);
+$graph->xaxis->title->SetFont(FF_FONT1,FS_BOLD);
 
 // Create the bar $b0plot, $b1plot, $bNplot... / CADA TIPO de extintor
 $groupBar = array();
@@ -93,5 +101,6 @@ for($i=0; $i<$contador;$i++){
 $graph->title->Set("GRAFICAS MENSUALES AÑO(".date('Y').")");
 
 // Display the graph
+$graph->legend->SetPos(0.5,0.98,'center','bottom');
 $graph->Stroke();
 ?>

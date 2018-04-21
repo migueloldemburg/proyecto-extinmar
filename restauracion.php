@@ -2,6 +2,7 @@
 session_start();
 //------------------------------------------------------------------------------------------
 //  Definiciones
+	require("class/Conexion.php");
     $archivo = trim($_GET['ficheroDeCopia'],'.gz');
 	$filename = "respaldos/".$archivo;//  Nombre del archivo.
 
@@ -136,7 +137,6 @@ session_start();
 	<!--<center><h1>Restore de la Base de Datos</h1></center><br>-->
 	<strong>
 <?php
-require("class/Conexion.php");
 $servername='localhost';//localhost 
 $dbusername=$auth_user;//root 
 $dbpassword=$auth_password;//tupass 

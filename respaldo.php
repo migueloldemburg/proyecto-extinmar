@@ -450,7 +450,7 @@ session_start();
 				//echo( "&nbsp;&nbsp;&nbsp;<small>($size bytes)</small><br>" );//ojo importante
 				
 				
-				echo '<script language="javascript">alert("El Respaldo esta completo"); $("body").html(""); location.reload()</script>';			
+				//echo '<script language="javascript">alert("El Respaldo esta completo");location.reload();</script>';			
 				
 			}
 		}
@@ -465,9 +465,10 @@ session_start();
 	//echo( "<br>&copy;2005 <a href=\"mailto:insidephp@gmail.com\">Inside PHP</a><br>" );
 	//echo( "vers." . Str_VERS . "<br>" );
 	//echo( "</small></center>" );
-	echo( "</BODY>" );
+	echo( "</BODY>
+				" );
 	echo( "</HTML>" );
-	echo '<script type="text/javascript">$("body").html(""); location.reload();< /script>';
+	//echo '<script language="javascript">alert("El Respaldo esta completo");location.reload();</script>';
 //------------------------------------------------------------------------------------------
 //  END
 ?>

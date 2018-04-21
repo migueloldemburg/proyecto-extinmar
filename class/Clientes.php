@@ -25,7 +25,7 @@ class Clientes{
         $fecha_registro = $this->conex->real_escape_string(strip_tags($fecha_registro,ENT_QUOTES));
         $this->error = "";
 
-        $select = "SELECT id FROM cliente WHERE documento = '".$predocumento.$documento."' ";
+        $select = "SELECT id FROM cliente WHERE documento = '".$predocumento.$documento."' AND estado = 1 ";
         $sql_select = $this->conex->query($select);
         if($sql_select->num_rows > 0){
             $this->error = "Este cliente ya se encuentra registrado.";
@@ -78,7 +78,7 @@ class Clientes{
     function obtener_cliente_by_documento($documento){
         $documento = $this->conex->real_escape_string(strip_tags(strtolower($documento),ENT_QUOTES));
 
-        $select = "SELECT * FROM cliente WHERE LOWER(documento) = '".strtolower($documento)."' ";
+        $select = "SELECT * FROM cliente WHERE LOWER(documento) = '".strtolower($documento)."' AND estado != 2 ";
         $sql_select = $this->conex->query($select);
         if($sql_select->num_rows > 0){
             $datos = $sql_select->fetch_assoc();

@@ -44,7 +44,7 @@
 								<!-- Dinamico -->
 							</select>
 						</div>
-						<div class="form-group">
+						<div class="form-group" id="hideonmove">
 							<label for="cantidad">Cantidad:</label>
 							<input type="text" class="form-control" required="" onkeypress="return isDecimal(event)" name="cantidad">
 						</div>

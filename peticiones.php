@@ -335,7 +335,7 @@ switch ($_POST['accion']) {
 			while($row=$categorias->array->fetch_assoc()){
 				echo "<tr class='recargar_serv_defecto' id='".$row['id']."'>";
 				echo "<td>".$row['nombre']."</td>";
-				echo "<td>".$row['capacidad']."</td>";
+				echo "<td>".$row['capacidad']." Lbs</td>";
 				echo "<td>";
 					echo "<button class='btn btn-xs btn-warning' data-toggle='modal' data-target='#confExtintores' data-accion='editar' data-id='".$row['id']."'><span class='glyphicon glyphicon-pencil'></span></button> ";
 					echo "<button class='btn btn-xs btn-danger cambiar_estado' id='".$row['id']."' de='extintor' estado='2' ><span class='glyphicon glyphicon-remove'></span></button>";

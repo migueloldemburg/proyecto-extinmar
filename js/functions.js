@@ -318,9 +318,10 @@ $(function(){
 					clienteForm[0].reset();
 					clienteForm.find('input[name=id]').val(0)
 					clienteForm.find('button[type=submit]').attr("disabled", false)
-					clienteForm.find('input').attr("disabled", false)
+					clienteForm.find('input').attr("disabled", false);
+					clienteForm.find('textarea[name=direccion]').attr("disabled", false);
 					clienteForm.find('select[name=predocumento]').val(predocumento)
-					clienteForm.find('input[name=documento]').val(documento)
+					clienteForm.find('input[name=documento]').val(documento).focus().select();
 					$("#buscarCliente").find("input[name=documento]").val('')
 				}
 			}

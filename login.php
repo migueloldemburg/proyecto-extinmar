@@ -16,7 +16,6 @@ if(isset($_POST['entrar'])){
 	require("class/Usuarios.php");
 	$usuario1 = new Usuarios();
 	if($usuario1->autenticar_usuario($_POST['usuario'], $_POST['clave'])){
-		echo "entra";
 		if($usuario1->estado == 1){
 			$_SESSION['id_'] = $usuario1->id;
 			$_SESSION['usuario_'] = $usuario1->usuario;

@@ -1,5 +1,6 @@
 <?php
 	session_start();
+	date_default_timezone_set('America/Caracas');
 	function __autoload($classname) {
 	    $filename = "class/". $classname .".php";
 	    include_once($filename);
@@ -21,7 +22,7 @@
 				<h5>VENTA DE EQUIPOS CONTRA INCENDIO - SISTEMAS CONTRA ROBO - ALARMAS CONTRA INCENDIO - LAMPARAS DE EMERGENCIA - RECARGA Y MANTENIMIENTO DE EXTINTORES.</h5>
 				<h6>Permiso de SENCAMER No. 0866 - 02 / Permiso de Bomberos No. 00189-01</h6>
 				<h6>RIF. J-30503969-0 / Permiso Fomento No. 626-90</h6>
-				<h6><?php echo "Generado el: ".date("d-m-Y h:m:d") ?></h6>
+				<h6><?php echo "Generado el: ".date("d-m-Y h:i:s A", time()) ?></h6>
 			</div>
 		</div>
 		<hr>

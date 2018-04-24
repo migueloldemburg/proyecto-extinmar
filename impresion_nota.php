@@ -31,7 +31,7 @@
 		<h6>Permiso de SENCAMER No. 0866 - 02 / Permiso de Bomberos No. 00189-01</h6>
 		<h6>RIF. J-30503969-0 / Permiso Fomento No. 626-90</h6>
 		<h6>** Estos precios no incluyen repuestos. Ser&aacute;n facturados adicionalmente. ** La empresa no se hace responsable por equipos pasados 30 d&iacute;as</h6>
-		<h6><?php echo "Generado el: ".date("d-m-Y h:m:d") ?></h6>
+		<h6><?php echo "Generado el: ".date("d-m-Y h:i:s A", time()) ?></h6>
 	</header>
 
 	<div class="container">

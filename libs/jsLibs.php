@@ -9,8 +9,8 @@
 <script src="<?php echo $ruta ?>libs/maskMoney/jquery.maskMoney.min.js"></script>
 <script src="<?php echo $ruta ?>libs/phoneMask/phoneMask.js"></script>
 <script src="<?php echo $ruta ?>libs/alertifyjs/alertify.min.js"></script>
-<script src="<?php echo $ruta ?>js/functions.js?1.0.6"></script>
-<script src="<?php echo $ruta ?>js/modals.js?1.0.5"></script>
+<script src="<?php echo $ruta ?>js/functions.js?1.2"></script>
+<script src="<?php echo $ruta ?>js/modals.js?1.2"></script>
 
 <script src="<?php echo $ruta ?>libs/jspdf/jspdf.js"></script>
 

@@ -30,7 +30,7 @@
 		<h5>VENTA DE EQUIPOS CONTRA INCENDIO - SISTEMAS CONTRA ROBO - ALARMAS CONTRA INCENDIO - LAMPARAS DE EMERGENCIA - RECARGA Y MANTENIMIENTO DE EXTINTORES.</h5>
 		<h6>Permiso de SENCAMER No. 0866 - 02 / Permiso de Bomberos No. 00189-01</h6>
 		<h6>RIF. J-30503969-0 / Permiso Fomento No. 626-90</h6>
-		<h6>** Estos precios no incluyen repuestos. Ser&acute;n facturados adicionalmente. ** La empresa no se hace responsable por equipos pasados 30 d&iacute;s</h6>
+		<h6>** Estos precios no incluyen repuestos. Ser&aacute;n facturados adicionalmente. ** La empresa no se hace responsable por equipos pasados 30 d&iacute;as</h6>
 		<h6><?php echo "Generado el: ".date("d-m-Y h:m:d") ?></h6>
 	</header>
 
@@ -86,7 +86,7 @@
 										<div class="form-group">
 											<label class="control-label col-xs-4">Fecha</label>
 											<div class="col-xs-8">
-												<input type="text" class="form-control phone" name="telefono2" placeholder="(9999) 999-9999" value="<?php echo $nota->fecha_registro ?>">
+												<input type="text" class="form-control" name="telefono2" value="<?php echo $nota->fecha_registro ?>">
 											</div>
 										</div>
 									</div>

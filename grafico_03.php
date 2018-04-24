@@ -88,7 +88,7 @@ for($i=0; $i<$contador;$i++){
 	${"b".$i."plot"}->SetLegend($tipos[$i]);
 }
 
-$graph->title->Set("GRAFICAS ANUALES  AÑO(".date('Y').")");
+$graph->title->Set(utf8_decode("GRAFICAS ANUALES  AÑO(".date('Y').")"));
 
 // Display the graph
 $graph->legend->SetPos(0.5,0.98,'center','bottom');

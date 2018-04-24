@@ -86,7 +86,7 @@
 										<div class="form-group">
 											<label class="control-label col-xs-4">Fecha</label>
 											<div class="col-xs-8">
-												<input type="text" class="form-control phone" name="telefono2" placeholder="(9999) 999-9999" value="<?php echo $nota->fecha_registro ?>">
+												<input type="text" class="form-control" name="telefono2" value="<?php echo $nota->fecha_registro ?>">
 											</div>
 										</div>
 									</div>
